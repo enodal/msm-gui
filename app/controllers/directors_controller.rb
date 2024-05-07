@@ -24,9 +24,9 @@ class DirectorsController < ApplicationController
   end
 
   def update
-    d_id = params.fetch("the_id")
+    y_id = params.fetch("the_id")
 
-    matching_director = Director.where({ :id => d_id })
+    matching_director = Director.where({ :id => y_id })
     the_director = matching_director.at(0)
 
     the_director.name = params.fetch("the_name")

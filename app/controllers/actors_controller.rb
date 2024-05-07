@@ -1,12 +1,12 @@
 class ActorsController < ApplicationController
   def create
-    x = Actor.new
-    x.name = params.fetch("the_name")
-    x.dob = params.fetch("the_dob")
-    x.bio = params.fetch("the_bio")
-    x.image = params.fetch("the_image")
+    a = Actor.new
+    a.name = params.fetch("the_name")
+    a.dob = params.fetch("the_dob")
+    a.bio = params.fetch("the_bio")
+    a.image = params.fetch("the_image")
 
-    x.save
+    a.save
 
     redirect_to("/actors")
   end
@@ -24,7 +24,7 @@ class ActorsController < ApplicationController
   end
 
   def update
-    x_id = params.fetch("the_id")
+    a_id = params.fetch("the_id")
 
     matching_act = Actor.where({ :id => a_id })
     the_actor = matching_act.at(0)
